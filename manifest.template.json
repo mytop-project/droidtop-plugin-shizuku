@@ -5,7 +5,7 @@
   "description": "Lets droidtop and the plugins you allow use Shizuku for system-level actions, such as closing another app's game.",
   "summary": "System-level actions through Shizuku, for droidtop and the plugins you allow",
   "publisher": "droidtop",
-  "homepage": "https://github.com/Droidtop/droidtop-plugin-shizuku",
+  "homepage": "https://github.com/mytop-project/droidtop-plugin-shizuku",
   "version": "1.6.0",
   "kind": "native_bundle",
   "contractVersion": 3,

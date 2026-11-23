@@ -1,6 +1,6 @@
 name: Sync upstream
 
-# The merge logic lives once, in Droidtop/droidtop-platforms, pinned by commit (Droidtop/tracker#198). Only the
+# The merge logic lives once, in mytop-project/droidtop-platforms, pinned by commit (mytop-project/tracker#198). Only the
 # schedule and the upstream are this repository's. upstream-sync only ever fast-forwards to the upstream; nothing is
 # merged into the recipe. A new upstream commit comes back as a ci/upstream-stable-<sha> branch off plugin-core that
 # moves the stable line's pin, to land and recompose plugin/stable (README "Branches").
@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   sync:
-    uses: Droidtop/droidtop-platforms/.github/workflows/sync-upstream.yml@a4c505977c3661297b42806dac8c6306e61a53bf
+    uses: mytop-project/droidtop-platforms/.github/workflows/sync-upstream.yml@0d931db42f484004b9ca7438500b725f60f2e3fc
     with:
       upstream-url: https://github.com/RikkaApps/Shizuku.git
       upstream-branch: master

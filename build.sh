@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 # Compiles, dexes and hashes droidtop.shizuku-bridge's payload from this
 # folder's source, in the exact shape PluginBundleInstaller.install()
-# expects (Droidtop/droidtop docs/SPEC.md 12a) -- same build.sh shape as
+# expects (mytop-project/droidtop docs/SPEC.md 12a) -- same build.sh shape as
 # droidtop's own samples/plugin-sample-statustile, adapted only in where
 # the :plugin-host classpath comes from: this repo has no droidtop
 # checkout of its own, so CI (.github/workflows/plugin-bundle.yml)
-# checks out Droidtop/droidtop separately and builds :plugin-host there.
+# checks out mytop-project/droidtop separately and builds :plugin-host there.
 #
 # Split from signing (see sign.sh) on purpose: this script never touches
 # the plugin origin's private key and is safe to run in CI. Signing is the separate sign.sh step: CI runs it with the
 # PLUGIN_SIGNING_KEY repo secret, droidtop-dev runs it locally with the origin key.
 #
 # Prerequisites:
-#   - kotlinc on PATH (matching Droidtop/droidtop's gradle/libs.versions.toml
+#   - kotlinc on PATH (matching mytop-project/droidtop's gradle/libs.versions.toml
 #     "kotlin" entry)
 #   - d8 on PATH (Android SDK build-tools)
 #   - PLUGIN_HOST_CLASSPATH pointing at a compiled :plugin-host classes.jar
-#     (from Droidtop/droidtop, e.g. its plugin-host-debug.aar's classes.jar)
+#     (from mytop-project/droidtop, e.g. its plugin-host-debug.aar's classes.jar)
 #   - ANDROID_JAR pointing at android.jar for :plugin-host's compileSdk
 #   - SHIZUKU_CLASSPATH: Shizuku's client jars (api, aidl and shared, dev.rikka.shizuku 13.x,
 #     colon-separated), for compiling only. The plugin never bundles them: droidtop's

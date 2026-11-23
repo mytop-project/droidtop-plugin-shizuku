@@ -3,7 +3,7 @@ package dev.droidtop.plugins.shizuku
 import dev.droidtop.plugins.shizuku.PackageRequests.Check
 
 /**
- * The request checks of `priv.settings@1` (docs/plugin-api.md 2.7, Droidtop/tracker#72): Android's `secure` and
+ * The request checks of `priv.settings@1` (docs/plugin-api.md 2.7, mytop-project/tracker#72): Android's `secure` and
  * `global` settings, read and changed with the `settings` command. Pure, so they are tested without a device;
  * [ShizukuPlugin] runs only what these build. The namespace, the key and the value are each one argument of the
  * command, never shell text.

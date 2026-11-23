@@ -28,7 +28,7 @@ import rikka.shizuku.Shizuku
  *   which the Emulator setup helper uses to give an emulator All files access or
  *   a runtime permission, each only after the person turned on Settings > Risky
  *   actions in droidtop and confirmed that one use; `revoke_permission`,
- *   `clear_data` and `uninstall`, Droidtop/tracker#130, whose checks are
+ *   `clear_data` and `uninstall`, mytop-project/tracker#130, whose checks are
  *   [PackageRequests])
  *   and `priv.shell@1` (`exec {argv}`), the latter at two levels, each its own
  *   grant: "adb" (Shizuku's server runs as the ADB shell user) and "root"
@@ -195,7 +195,7 @@ class ShizukuPlugin : DroidtopPlugin {
         }
     }
 
-    /** `settings get <namespace> <key>` (priv.settings, Droidtop/tracker#72): `{value}`, null for a setting that is not set. */
+    /** `settings get <namespace> <key>` (priv.settings, mytop-project/tracker#72): `{value}`, null for a setting that is not set. */
     private fun settingsGet(call: PluginCall): PluginReply {
         val check = SettingsRequests.get(call.args.optString("namespace"), call.args.optString("key"))
         if (check is PackageRequests.Check.Run) notReady()?.let { return it }
@@ -246,7 +246,7 @@ class ShizukuPlugin : DroidtopPlugin {
         )
     }
 
-    /** `pm clear <package>` (Droidtop/tracker#130): never droidtop, Shizuku, the Home app in use or a system app. */
+    /** `pm clear <package>` (mytop-project/tracker#130): never droidtop, Shizuku, the Home app in use or a system app. */
     private fun clearData(call: PluginCall): PluginReply {
         notReady()?.let { return it }
         val check = PackageRequests.clearData(call.args.optString("package")) { device(call, it) }
@@ -255,7 +255,7 @@ class ShizukuPlugin : DroidtopPlugin {
         }
     }
 
-    /** `pm uninstall --user 0 <package>` (Droidtop/tracker#130): never droidtop, Shizuku, the Home app in use or a system app. */
+    /** `pm uninstall --user 0 <package>` (mytop-project/tracker#130): never droidtop, Shizuku, the Home app in use or a system app. */
     private fun uninstall(call: PluginCall): PluginReply {
         notReady()?.let { return it }
         val check = PackageRequests.uninstall(call.args.optString("package")) { device(call, it) }
@@ -265,7 +265,7 @@ class ShizukuPlugin : DroidtopPlugin {
     }
 
     /**
-     * `install {staged}` (Droidtop/tracker#130): the APK droidtop's broker read, confirmed with the person and staged
+     * `install {staged}` (mytop-project/tracker#130): the APK droidtop's broker read, confirmed with the person and staged
      * in its private cache, streamed into `pm install -S <size>` on stdin; this plugin runs in droidtop's process, so
      * it reads that cache and no copy is ever readable by the shell user. The staged copy is removed when it ends.
      */
@@ -703,7 +703,7 @@ class ShizukuPlugin : DroidtopPlugin {
     /**
      * [PluginCapability.APP_STATUS]: what droidtop's app status page shows about Shizuku. The page asks only for the
      * state (and launches the app itself); starting Shizuku and allowing droidtop are facets now ([facets]), because
-     * the page never sent the start, open_setup and grant actions this used to answer (Droidtop/tracker#602).
+     * the page never sent the start, open_setup and grant actions this used to answer (mytop-project/tracker#602).
      */
     private fun appStatus(args: PluginArgs): PluginResult {
         val state = currentState()

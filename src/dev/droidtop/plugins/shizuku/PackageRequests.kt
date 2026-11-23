@@ -1,7 +1,7 @@
 package dev.droidtop.plugins.shizuku
 
 /**
- * The request checks of `priv.packages@1` (docs/plugin-api.md 2.7, Droidtop/tracker#130): what each op accepts and the
+ * The request checks of `priv.packages@1` (docs/plugin-api.md 2.7, mytop-project/tracker#130): what each op accepts and the
  * exact command it becomes. Pure, so they are tested without a device; [ShizukuPlugin] runs only what these build.
  * A package name, an AppOps name or a permission name is checked against the shape the command takes, and each is one
  * argument of the command, never shell text.

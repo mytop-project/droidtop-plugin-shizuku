@@ -5,8 +5,8 @@ package dev.droidtop.plugins.shizuku
  * `Process.waitFor(timeout, unit)`, so Java's default runs: it polls `exitValue()` and takes only an
  * `IllegalThreadStateException` as "still running". The server throws that, but Binder delivers it as its parent,
  * `IllegalArgumentException("process hasn't exited")`, so the first poll of a running command threw out of the plugin
- * and droidtop disabled it ("Stopped: The plugin failed to load", Droidtop/tracker#558). Same approach as droidtop's
- * own RemoteProcessWait (Droidtop/droidtop 7693a2a).
+ * and droidtop disabled it ("Stopped: The plugin failed to load", mytop-project/tracker#558). Same approach as droidtop's
+ * own RemoteProcessWait (mytop-project/droidtop 7693a2a).
  */
 object RemoteProcessWait {
     private const val POLL_MS = 20L

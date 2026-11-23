@@ -6,8 +6,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Droidtop/droidtop-plugin-shizuku/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Droidtop/droidtop-plugin-shizuku?label=release&include_prereleases&style=flat-square"></a>
-  <a href="https://github.com/Droidtop/droidtop-plugin-shizuku/actions/workflows/plugin-bundle.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/Droidtop/droidtop-plugin-shizuku/plugin-bundle.yml?branch=main&label=build&style=flat-square"></a>
+  <a href="https://github.com/mytop-project/droidtop-plugin-shizuku/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/mytop-project/droidtop-plugin-shizuku?label=release&include_prereleases&style=flat-square"></a>
+  <a href="https://github.com/mytop-project/droidtop-plugin-shizuku/actions/workflows/plugin-bundle.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/mytop-project/droidtop-plugin-shizuku/plugin-bundle.yml?branch=main&label=build&style=flat-square"></a>
   <img alt="For droidtop" src="https://img.shields.io/badge/for-droidtop-2f7bf5?style=flat-square">
   <a href="LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-blue?style=flat-square"></a>
 </p>
@@ -24,7 +24,7 @@
   <a href="#upstream-readme">Upstream README</a>
 </p>
 
-This is a fork of [Shizuku](https://github.com/RikkaApps/Shizuku) with a [droidtop](https://github.com/Droidtop/droidtop) plugin added beside it: `src/`, `build.sh`, `sign.sh` and `manifest.template.json` (how they build: `PLUGIN-BUILD.md`). droidtop never starts or bundles Shizuku's server. It talks to the Shizuku app you already installed.
+This is a fork of [Shizuku](https://github.com/RikkaApps/Shizuku) with a [droidtop](https://github.com/mytop-project/droidtop) plugin added beside it: `src/`, `build.sh`, `sign.sh` and `manifest.template.json` (how they build: `PLUGIN-BUILD.md`). droidtop never starts or bundles Shizuku's server. It talks to the Shizuku app you already installed.
 
 ## What the droidtop plugin does
 
@@ -39,7 +39,7 @@ It is a provider only. Nothing depends on it, and a plugin that wants privilege 
 
 ## Install
 
-You need [droidtop](https://github.com/Droidtop/droidtop). You also need the [Shizuku app](https://shizuku.rikka.app/) installed and started.
+You need [droidtop](https://github.com/mytop-project/droidtop). You also need the [Shizuku app](https://shizuku.rikka.app/) installed and started.
 
 1. In droidtop open **Settings > Plugins > Add**. droidtop's own catalog is always there.
 2. Pick **Shizuku** and press **Install**.
@@ -185,6 +185,6 @@ needed. That's our standard operation." This repository is a fork, so it has thr
   that moves the line's pin on `plugin-core`.
 - **`plugin/stable`** is the release branch: the upstream commit `plugin-core` pins, with `plugin-core` written over
   it. It is generated, never edited: `python3 tools/plugin_line.py compose stable --commit` from
-  Droidtop/droidtop-platforms. `.github/workflows/plugin-line.yml` fails when it differs from that composition.
+  mytop-project/droidtop-platforms. `.github/workflows/plugin-line.yml` fails when it differs from that composition.
 
 There is no `main` or `master`.

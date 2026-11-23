@@ -1,8 +1,8 @@
 package dev.droidtop.plugins.shizuku
 
 /**
- * What droidtop draws for Shizuku itself, as facets (Droidtop/droidtop docs/plugin-api.md 1.10, "Facets first";
- * Droidtop/tracker#602): its state on the Quick Menu and its settings page, and the one step that makes it usable,
+ * What droidtop draws for Shizuku itself, as facets (mytop-project/droidtop docs/plugin-api.md 1.10, "Facets first";
+ * mytop-project/tracker#602): its state on the Quick Menu and its settings page, and the one step that makes it usable,
  * in place: Open Shizuku while it is not running (its own screen is where it is paired and started; nothing else can
  * start it without root or ADB), Allow droidtop while it runs and has not allowed droidtop. Pure, so the plan can be
  * tested without Android or org.json; [ShizukuPlugin] turns it into JSON.
@@ -57,7 +57,7 @@ object ShizukuFacets {
         val step = when (state) {
             State.NOT_RUNNING -> Spec("open", "action", "Open Shizuku", sub = "Start it there: with Wireless debugging, or as root", op = OP_OPEN)
             State.NOT_ALLOWED -> Spec("allow", "action", "Allow droidtop", sub = "Shizuku asks you to allow droidtop", op = OP_ALLOW)
-            // There is no way to install another app from a facet yet (Droidtop/tracker#602, the audit's gap 6).
+            // There is no way to install another app from a facet yet (mytop-project/tracker#602, the audit's gap 6).
             State.NOT_INSTALLED -> if (target == SETTINGS) {
                 Spec("missing", "notice", "Shizuku is not installed", sub = "Install Shizuku from your app store or F-Droid, then come back here")
             } else {

@@ -3,7 +3,7 @@
 # directory, after kotlinc is installed and before build.sh: fetches Shizuku's
 # client library for the compile classpath (it is compiled against and never
 # bundled) and hands it to build.sh through SHIZUKU_CLASSPATH. DROIDTOP_DIR is
-# the Droidtop/droidtop checkout; the version is the one its :plugin-host
+# the mytop-project/droidtop checkout; the version is the one its :plugin-host
 # carries (the "shizuku" entry of gradle/libs.versions.toml).
 set -euo pipefail
 SHIZUKU_VERSION=$(grep '^shizuku = ' "$DROIDTOP_DIR/gradle/libs.versions.toml" | cut -d '"' -f2)
